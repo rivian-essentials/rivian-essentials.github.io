@@ -565,10 +565,11 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
+/* Warm canvas stage so white-background product photos blend in */
 .product-card__image {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: var(--moss);
+  background: radial-gradient(circle at 50% 38%, #fbfaf6 0%, #eceadf 55%, #dcd9cb 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -579,7 +580,9 @@ button {
 .product-card__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 20px;
+  mix-blend-mode: multiply;
   transition: transform 600ms var(--ease-out);
 }
 
@@ -672,6 +675,18 @@ button {
 }
 
 /* ---------- CTA button ---------- */
+
+/* Row of CTAs for gen-split or paired products */
+.product-card__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.product-card__ctas .cta-button {
+  margin-top: 0;
+}
 
 .cta-button {
   display: inline-flex;

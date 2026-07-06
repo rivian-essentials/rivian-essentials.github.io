@@ -24,7 +24,7 @@ Pure HTML/CSS/JS, no build step — same architecture as tesla-essentials.com an
 
 - Product photos: `images/products/<product-slug>/photo-800.{webp,jpg}` (4:3, 800px wide).
 - Hero photo (optional, not yet wired in): `images/hero/`.
-- OG/social image: `images/brand/og-image.jpg` (1200×630) — referenced from `index.html` meta tags; currently missing, add before sharing links socially.
+- OG/social image: `images/brand/og-image.jpg` (1200×630) — rendered from `images/brand/og-image.html` (regeneration command is in that file's header comment).
 
 Convert to WebP with: `cwebp -q 82 photo-800.jpg -o photo-800.webp`
 

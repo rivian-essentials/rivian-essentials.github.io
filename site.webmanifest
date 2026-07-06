@@ -1,0 +1,16 @@
+{
+  "name": "Rivian Essentials",
+  "short_name": "Rivian Essentials",
+  "description": "Curated accessories for Rivian R1T, R1S, and R2.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#101b12",
+  "theme_color": "#101b12",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

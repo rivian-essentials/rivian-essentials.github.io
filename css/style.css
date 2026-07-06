@@ -1,0 +1,865 @@
+/* ==========================================================================
+   RIVIAN ESSENTIALS — forest dusk design system
+   Palette: deep pine surfaces, warm canvas text, compass-yellow accent
+   Type: Barlow Condensed (trail signage) / Karla (body) / Chivo Mono (labels)
+   ========================================================================== */
+
+:root {
+  /* Surfaces — forest dusk */
+  --forest:   #101b12;   /* page background, deep pine */
+  --pine:     #16241a;   /* cards, panels */
+  --pine-2:   #0c150e;   /* deep bands, footer */
+  --moss:     #1d2f22;   /* elevated / hover surfaces */
+
+  /* Edges */
+  --edge:        #24382a;
+  --edge-strong: #33503c;
+
+  /* Text — warm canvas on dark green */
+  --canvas: #efead8;     /* headings */
+  --linen:  #cdc9b8;     /* body copy */
+  --sage:   #9aa893;     /* secondary copy */
+  --lichen: #6e7d6b;     /* muted labels, meta */
+
+  /* Accents */
+  --compass:      #f0b429;                     /* Rivian compass yellow */
+  --compass-hot:  #ffc94a;
+  --compass-soft: rgba(240, 180, 41, 0.12);
+  --compass-ring: rgba(240, 180, 41, 0.45);
+  --ember:        #d97742;                     /* campfire ember — sparingly */
+
+  /* Type */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body:    'Karla', 'Helvetica Neue', sans-serif;
+  --font-mono:    'Chivo Mono', 'Courier New', monospace;
+
+  /* Layout */
+  --max-w: 1200px;
+  --nav-h: 60px;
+
+  /* Motion */
+  --ease:     cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--linen);
+  background: var(--forest);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--compass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--compass);
+  color: var(--forest);
+}
+
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ---------- Glyphs ---------- */
+
+.glyph {
+  width: 12px;
+  height: 16px;
+  fill: var(--compass);
+  flex: none;
+}
+
+.glyph--brand {
+  width: 14px;
+  height: 19px;
+}
+
+.glyph--placeholder {
+  width: 40px;
+  height: 53px;
+  fill: var(--edge-strong);
+}
+
+/* ---------- Treelines (signature) ---------- */
+
+.treeline {
+  pointer-events: none;
+}
+
+.treeline svg {
+  width: 100%;
+}
+
+.treeline use {
+  fill: var(--pine-2);
+}
+
+.treeline__ground {
+  fill: var(--edge);
+}
+
+.treeline--hero {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+}
+
+.treeline--hero svg {
+  height: clamp(36px, 5vw, 64px);
+}
+
+.treeline--hero use {
+  fill: var(--forest);
+}
+
+.treeline--hero .treeline__ground {
+  fill: var(--forest);
+}
+
+.treeline--divider {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.treeline--divider svg {
+  height: 40px;
+}
+
+.treeline--divider use {
+  fill: var(--edge-strong);
+}
+
+.treeline--footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -46px;
+}
+
+.treeline--footer svg {
+  height: 48px;
+}
+
+.treeline--footer use {
+  fill: var(--pine-2);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: clamp(560px, 92vh, 900px);
+  display: flex;
+  align-items: center;
+  padding: 96px 24px 140px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, #0a120c 0%, #12211610 55%),
+    linear-gradient(180deg, #0b130d 0%, #15271b 60%, #101b12 100%);
+}
+
+/* Topo contour lines drifting behind the headline */
+.hero__topo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero__topo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.topo-line {
+  stroke: var(--sage);
+  stroke-width: 1.1;
+  opacity: 0.14;
+}
+
+.topo-line:nth-child(2) { opacity: 0.11; }
+.topo-line:nth-child(3) { opacity: 0.09; }
+.topo-line:nth-child(4) { opacity: 0.07; }
+.topo-line:nth-child(5) { opacity: 0.05; }
+
+/* Warm dusk glow low on the horizon */
+.hero__dusk {
+  position: absolute;
+  left: 50%;
+  bottom: -12%;
+  transform: translateX(-50%);
+  width: min(1100px, 130vw);
+  height: 55%;
+  z-index: 1;
+  background: radial-gradient(ellipse at 50% 100%, rgba(240, 180, 41, 0.14), rgba(217, 119, 66, 0.05) 45%, transparent 72%);
+  filter: blur(10px);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  padding: 9px 16px;
+  border: 1px solid var(--edge);
+  border-radius: 3px;
+  background: rgba(12, 21, 14, 0.6);
+  margin-bottom: 28px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 12vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--canvas);
+  margin-bottom: 26px;
+}
+
+.hero__title-accent {
+  color: var(--compass);
+}
+
+.hero__sub {
+  max-width: 34rem;
+  font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+  color: var(--sage);
+  margin-bottom: 40px;
+}
+
+.hero__vehicles {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--compass);
+  padding: 13px 30px;
+  border-radius: 4px;
+  transition: background 180ms var(--ease), transform 180ms var(--ease), box-shadow 220ms var(--ease);
+}
+
+.hero-pill:hover {
+  background: var(--compass-hot);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(240, 180, 41, 0.25);
+}
+
+.hero__vehicle-tags {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.vehicle-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--lichen);
+  border: 1px solid var(--edge);
+  border-radius: 3px;
+  padding: 7px 12px;
+}
+
+/* ==========================================================================
+   STICKY CATEGORY NAV
+   ========================================================================== */
+
+.category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12, 21, 14, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--edge);
+  transition: box-shadow 300ms var(--ease);
+}
+
+.category-nav.is-stuck {
+  box-shadow: var(--shadow-md);
+}
+
+.category-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: var(--max-w);
+  min-height: var(--nav-h);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.category-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--canvas);
+  white-space: nowrap;
+}
+
+.category-nav__pills {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-nav__pills::-webkit-scrollbar {
+  display: none;
+}
+
+/* Trail-blaze active marker: a small painted rectangle, like a blaze on a tree */
+.nav-pill {
+  position: relative;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.86rem;
+  color: var(--sage);
+  padding: 9px 13px 11px;
+  white-space: nowrap;
+  transition: color 180ms var(--ease);
+}
+
+.nav-pill::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 6px;
+  height: 3px;
+  border-radius: 1px;
+  background: var(--compass);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 200ms var(--ease), transform 260ms var(--ease-out);
+}
+
+.nav-pill:hover {
+  color: var(--canvas);
+}
+
+.nav-pill.is-active {
+  color: var(--canvas);
+}
+
+.nav-pill.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.category-nav__filter {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+  padding: 4px;
+  border: 1px solid var(--edge);
+  border-radius: 4px;
+  background: var(--pine-2);
+}
+
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--lichen);
+  padding: 6px 11px;
+  border-radius: 3px;
+  transition: color 160ms var(--ease), background 160ms var(--ease);
+}
+
+.filter-chip:hover {
+  color: var(--canvas);
+}
+
+.filter-chip.is-active {
+  color: var(--forest);
+  background: var(--compass);
+}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+
+.section {
+  padding: clamp(64px, 9vw, 110px) 24px;
+  scroll-margin-top: calc(var(--nav-h) + 12px);
+}
+
+.section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.section__header {
+  max-width: 44rem;
+  margin-bottom: clamp(32px, 5vw, 52px);
+}
+
+.section__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--compass);
+  margin-bottom: 14px;
+}
+
+.section__header h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  line-height: 1.02;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--canvas);
+  margin-bottom: 16px;
+}
+
+.section__lede {
+  color: var(--sage);
+  font-size: 1.02rem;
+}
+
+.section__empty {
+  margin-top: 8px;
+  font-size: 0.92rem;
+  color: var(--lichen);
+}
+
+.section__empty-reset {
+  color: var(--compass);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Product grid & cards ---------- */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--pine);
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 500ms var(--ease-out),
+    transform 500ms var(--ease-out),
+    border-color 220ms var(--ease),
+    box-shadow 320ms var(--ease);
+}
+
+.product-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card:nth-child(2) { transition-delay: 70ms; }
+.product-card:nth-child(3) { transition-delay: 140ms; }
+
+.product-card:hover {
+  border-color: var(--edge-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-card__image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--moss);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--edge);
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.04);
+}
+
+/* Designed placeholder for cards awaiting photos */
+.product-card__image--placeholder {
+  flex-direction: column;
+  gap: 12px;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(240, 180, 41, 0.05), transparent 60%),
+    var(--pine-2);
+}
+
+.product-card__image-note {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lichen);
+}
+
+.product-card__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  padding: 22px 22px 24px;
+}
+
+.product-card__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--compass);
+}
+
+.product-card__info h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--canvas);
+}
+
+.product-card__review {
+  font-size: 0.94rem;
+  color: var(--sage);
+}
+
+.product-card__fits {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--linen);
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.product-card__fits-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lichen);
+}
+
+/* ---------- CTA button ---------- */
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--forest);
+  background: var(--compass);
+  padding: 12px 24px;
+  border-radius: 4px;
+  min-height: 44px;
+  margin-top: 8px;
+  transition: background 180ms var(--ease), box-shadow 220ms var(--ease), transform 180ms var(--ease);
+}
+
+.cta-button:hover {
+  background: var(--compass-hot);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(240, 180, 41, 0.22);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+  position: relative;
+  background: var(--pine-2);
+  border-top: 1px solid var(--edge);
+  margin-top: 60px;
+  padding: clamp(48px, 7vw, 72px) 24px 40px;
+}
+
+.site-footer__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.site-footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--edge);
+  margin-bottom: 32px;
+}
+
+.site-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--canvas);
+  margin-bottom: 6px;
+}
+
+.site-footer__tagline {
+  font-size: 0.92rem;
+  color: var(--lichen);
+}
+
+.site-footer__links {
+  display: flex;
+  gap: 8px 22px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--sage);
+}
+
+.site-footer__links a {
+  transition: color 160ms var(--ease);
+}
+
+.site-footer__links a:hover {
+  color: var(--compass);
+}
+
+.site-footer__disclaimer {
+  max-width: 62rem;
+  display: grid;
+  gap: 12px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--lichen);
+  margin-bottom: 28px;
+}
+
+.site-footer__disclaimer strong {
+  color: var(--sage);
+}
+
+.site-footer__copyright {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--lichen);
+}
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-page__code {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(6rem, 20vw, 12rem);
+  line-height: 1;
+  color: var(--compass);
+  letter-spacing: 0.04em;
+}
+
+.error-page__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--canvas);
+  margin: 10px 0 14px;
+}
+
+.error-page__sub {
+  max-width: 26rem;
+  color: var(--sage);
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .category-nav__brand span {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 72px 20px 120px;
+    align-items: flex-end;
+  }
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .category-nav__inner {
+    gap: 12px;
+    padding: 8px 16px;
+    flex-wrap: wrap;
+  }
+
+  .category-nav__filter {
+    margin-left: 0;
+    order: 3;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .treeline--divider svg {
+    height: 32px;
+  }
+
+  .site-footer__top {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .product-card {
+    opacity: 1;
+    transform: none;
+  }
+}

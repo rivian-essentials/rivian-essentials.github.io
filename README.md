@@ -1,0 +1,46 @@
+# Rivian Essentials
+
+Curated affiliate recommendations for Rivian R1T, R1S, and R2 owners.
+Live at [rivian-essentials.com](https://rivian-essentials.com/).
+
+Pure HTML/CSS/JS, no build step — same architecture as tesla-essentials.com and cyberoffroading.com. Deployed via GitHub Pages from `main`.
+
+## Adding a product
+
+1. Find the `PRODUCT CARD TEMPLATE` comment in `index.html` (top of the Recovery section) and copy a card into the right section's `.product-grid`.
+2. Set `data-fits` to a space-separated list of `r1t`, `r1s`, `r2` — the nav's vehicle filter uses it.
+3. Replace the CTA's `href="#"` with your `amzn.to` shortlink. Keep `rel="nofollow sponsored noopener noreferrer"`.
+4. Add photos (see below) and swap the placeholder `<div>` for a `<picture>` element:
+
+```html
+<picture>
+  <source srcset="images/products/SLUG/photo-800.webp" type="image/webp">
+  <img src="images/products/SLUG/photo-800.jpg" alt="DESCRIPTION"
+       width="800" height="600" loading="lazy" decoding="async">
+</picture>
+```
+
+## Images
+
+- Product photos: `images/products/<product-slug>/photo-800.{webp,jpg}` (4:3, 800px wide).
+- Hero photo (optional, not yet wired in): `images/hero/`.
+- OG/social image: `images/brand/og-image.jpg` (1200×630) — referenced from `index.html` meta tags; currently missing, add before sharing links socially.
+
+Convert to WebP with: `cwebp -q 82 photo-800.jpg -o photo-800.webp`
+
+## Structure
+
+```
+index.html        single page, 6 gear sections + vehicle filter
+404.html          branded "Off the Trail" page
+css/style.css     forest-dusk design system (tokens in :root)
+js/main.js        sticky nav, scroll reveals, vehicle filter
+CNAME             rivian-essentials.com (GitHub Pages custom domain)
+sitemap.xml       root only (single-page site)
+```
+
+## Design notes
+
+- Palette: deep pine surfaces, warm canvas text, compass-yellow accent (`:root` in `css/style.css`).
+- Type: Barlow Condensed (display) / Karla (body) / Chivo Mono (labels), via Google Fonts.
+- Signature: conifer treeline SVG dividers (`#pine` symbol) and trail-blaze nav markers.

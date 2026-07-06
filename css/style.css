@@ -155,8 +155,11 @@ button {
   z-index: 3;
 }
 
+/* Height must scale with viewport width: the SVG uses xMidYMax slice on a
+   1440x64 viewBox, so a capped height at wide viewports crops the tree tops.
+   Keeping height >= width/22.5 (4.5vw) means any overflow crops sideways only. */
 .treeline--hero svg {
-  height: clamp(36px, 5vw, 64px);
+  height: max(36px, 4.5vw);
 }
 
 .treeline--hero use {
@@ -181,15 +184,17 @@ button {
   fill: var(--edge-strong);
 }
 
+/* Same top-crop guard as the hero treeline: 1440x48 viewBox needs >= 3.4vw.
+   Anchored above the footer edge via bottom so it tracks its own height. */
 .treeline--footer {
   position: absolute;
   left: 0;
   right: 0;
-  top: -46px;
+  bottom: calc(100% - 2px);
 }
 
 .treeline--footer svg {
-  height: 48px;
+  height: max(48px, 3.4vw);
 }
 
 .treeline--footer use {

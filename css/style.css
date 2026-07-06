@@ -639,7 +639,8 @@ button {
 .product-card__fits {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 4px 8px;
   font-size: 0.85rem;
   color: var(--linen);
   margin-top: auto;
@@ -652,6 +653,22 @@ button {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--lichen);
+}
+
+/* R1 generation indicator — Gen 1 (2022–2024) vs Gen 2 (2025+) fitment
+   differs for mats, PPF, wireless pads, cabin filters, etc. */
+.gen-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--sage);
+  border: 1px solid var(--edge-strong);
+  border-radius: 3px;
+  padding: 2px 8px;
+  align-self: center;
 }
 
 /* ---------- CTA button ---------- */

@@ -187,6 +187,10 @@
           <!--
             PRODUCT CARD TEMPLATE — copy this block to add a product.
             data-fits: space-separated list of "r1t", "r1s", "r2" (used by the vehicle filter).
+            data-gen: for gen-sensitive R1 products only — "g1" (2022-2024), "g2" (2025+),
+              or "g1 g2" when both gens are covered by separate SKUs. Omit if gen doesn't
+              matter. Pair it with visible badges on the fits line:
+                <span class="gen-badge">Gen 1</span> <span class="gen-badge">Gen 2 &middot; 2025+</span>
             Replace the .product-card__image placeholder with:
               <picture>
                 <source srcset="images/products/SLUG/photo-800.webp" type="image/webp">
@@ -470,7 +474,7 @@
         </div>
         <div class="product-grid">
 
-          <article class="product-card" data-fits="r1t r1s">
+          <article class="product-card" data-fits="r1t r1s" data-gen="g1 g2">
             <div class="product-card__image product-card__image--placeholder">
               <svg class="glyph glyph--placeholder" aria-hidden="true"><use href="#pine"/></svg>
               <span class="product-card__image-note">Photo coming soon</span>
@@ -478,8 +482,8 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Floor Mats</p>
               <h3>All-Weather Floor Mat Set</h3>
-              <p class="product-card__review">Laser-measured fit with tall walls that actually contain a boot's worth of snowmelt. Hose them off, drop them back in — the carpet underneath stays showroom.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T &amp; R1S</p>
+              <p class="product-card__review">Laser-measured fit with tall walls that actually contain a boot's worth of snowmelt. Hose them off, drop them back in — the carpet underneath stays showroom. Gen 1 and Gen 2 use different molds, so match the mat to your model year.</p>
+              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T &amp; R1S <span class="gen-badge">Gen 1</span> <span class="gen-badge">Gen 2 &middot; 2025+</span></p>
               <a href="#" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a><!-- TODO: replace # with amzn.to link -->
             </div>
           </article>

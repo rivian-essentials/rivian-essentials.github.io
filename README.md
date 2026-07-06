@@ -9,8 +9,9 @@ Pure HTML/CSS/JS, no build step — same architecture as tesla-essentials.com an
 
 1. Find the `PRODUCT CARD TEMPLATE` comment in `index.html` (top of the Recovery section) and copy a card into the right section's `.product-grid`.
 2. Set `data-fits` to a space-separated list of `r1t`, `r1s`, `r2` — the nav's vehicle filter uses it.
-3. Replace the CTA's `href="#"` with your `amzn.to` shortlink. Keep `rel="nofollow sponsored noopener noreferrer"`.
-4. Add photos (see below) and swap the placeholder `<div>` for a `<picture>` element:
+3. **R1 generations:** if fitment differs between Gen 1 (2022–2024) and Gen 2 (2025+) — common for mats, PPF, wireless pads, cabin filters — add `data-gen` (`g1`, `g2`, or `g1 g2`) and show `<span class="gen-badge">Gen 1</span>` / `<span class="gen-badge">Gen 2 · 2025+</span>` badges on the Fits line. Omit both when gen doesn't matter. (`data-gen` is inert today; it future-proofs for a Gen sub-filter once the catalog grows.)
+4. Replace the CTA's `href="#"` with your `amzn.to` shortlink. Keep `rel="nofollow sponsored noopener noreferrer"`.
+5. Add photos (see below) and swap the placeholder `<div>` for a `<picture>` element:
 
 ```html
 <picture>

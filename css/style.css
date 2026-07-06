@@ -4,12 +4,45 @@
    Type: Barlow Condensed (trail signage) / Karla (body) / Chivo Mono (labels)
    ========================================================================== */
 
+/* ---------- Self-hosted fonts (latin subsets; Karla & Chivo are variable) ---------- */
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/barlow-condensed-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/barlow-condensed-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/karla-var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Chivo Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/chivo-mono-var.woff2') format('woff2');
+}
+
 :root {
   /* Surfaces — forest dusk */
   --forest:   #101b12;   /* page background, deep pine */
   --pine:     #16241a;   /* cards, panels */
   --pine-2:   #0c150e;   /* deep bands, footer */
-  --moss:     #1d2f22;   /* elevated / hover surfaces */
 
   /* Edges */
   --edge:        #24382a;
@@ -19,14 +52,11 @@
   --canvas: #efead8;     /* headings */
   --linen:  #cdc9b8;     /* body copy */
   --sage:   #9aa893;     /* secondary copy */
-  --lichen: #6e7d6b;     /* muted labels, meta */
+  --lichen: #808f7d;     /* muted labels, meta (AA on --forest/--pine) */
 
   /* Accents */
   --compass:      #f0b429;                     /* Rivian compass yellow */
   --compass-hot:  #ffc94a;
-  --compass-soft: rgba(240, 180, 41, 0.12);
-  --compass-ring: rgba(240, 180, 41, 0.45);
-  --ember:        #d97742;                     /* campfire ember — sparingly */
 
   /* Type */
   --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
@@ -42,7 +72,6 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Elevation */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.45);
 }
@@ -433,12 +462,22 @@ button {
 
 .category-nav__filter {
   display: flex;
+  align-items: center;
   gap: 5px;
   margin-left: auto;
   padding: 4px;
   border: 1px solid var(--edge);
   border-radius: 4px;
   background: var(--pine-2);
+}
+
+.category-nav__filter-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  padding: 0 4px 0 7px;
 }
 
 .filter-chip {
@@ -462,6 +501,38 @@ button {
 }
 
 /* ==========================================================================
+   INTRO
+   ========================================================================== */
+
+.intro {
+  padding: clamp(36px, 5vw, 56px) 24px 0;
+}
+
+.intro__inner {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.intro p {
+  color: var(--sage);
+  font-size: 1.02rem;
+}
+
+.intro .intro__disclosure {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--lichen);
+}
+
+.intro__disclosure a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ==========================================================================
    SECTIONS
    ========================================================================== */
 
@@ -480,7 +551,8 @@ button {
   margin-bottom: clamp(32px, 5vw, 52px);
 }
 
-.section__eyebrow {
+/* Keyword kicker inside each h2 — visually the old eyebrow, semantically part of the heading */
+.h2-kicker {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -513,6 +585,63 @@ button {
   margin-top: 8px;
   font-size: 0.92rem;
   color: var(--lichen);
+}
+
+/* ---------- FAQ ---------- */
+
+.faq {
+  max-width: 44rem;
+  display: grid;
+  gap: 10px;
+}
+
+.faq__item {
+  background: var(--pine);
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq__item summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--canvas);
+  list-style: none;
+  position: relative;
+  padding-right: 44px;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  color: var(--compass);
+}
+
+.faq__item[open] summary::after {
+  content: '\2013';
+}
+
+.faq__item summary:hover {
+  color: var(--compass-hot);
+}
+
+.faq__item p {
+  padding: 0 20px 18px;
+  font-size: 0.96rem;
+  color: var(--sage);
 }
 
 .section__empty-reset {
@@ -551,8 +680,14 @@ button {
   transform: translateY(0);
 }
 
-.product-card:nth-child(2) { transition-delay: 70ms; }
-.product-card:nth-child(3) { transition-delay: 140ms; }
+/* display:flex above beats the UA [hidden] rule — restore it for the filter */
+.product-card[hidden] {
+  display: none;
+}
+
+/* Stagger only the reveal (opacity/transform), not hover border/shadow */
+.product-card:nth-child(2) { transition-delay: 70ms, 70ms, 0s, 0s; }
+.product-card:nth-child(3) { transition-delay: 140ms, 140ms, 0s, 0s; }
 
 .product-card:hover {
   border-color: var(--edge-strong);
@@ -832,15 +967,18 @@ button {
     padding-right: 20px;
   }
 
+  /* Two rows: brand + filter share row 1; pills scroll on row 2 */
   .category-nav__inner {
-    gap: 12px;
+    gap: 4px 12px;
     padding: 8px 16px;
     flex-wrap: wrap;
   }
 
-  .category-nav__filter {
-    margin-left: 0;
+  .category-nav__pills {
     order: 3;
+    flex-basis: 100%;
+    -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, #000 92%, transparent);
   }
 
   .product-grid {

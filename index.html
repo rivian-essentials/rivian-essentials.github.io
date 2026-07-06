@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rivian Essentials — Curated Gear for R1T, R1S &amp; R2</title>
+  <title>Best Rivian Accessories — R1T, R1S &amp; R2 Gear | Rivian Essentials</title>
   <meta name="description" content="The best accessories for Rivian R1T, R1S, and R2 — recovery gear, camp kit, cargo storage, charging, and interior protection. Curated picks that earn their place in the truck.">
   <link rel="canonical" href="https://rivian-essentials.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rivian-essentials.com/">
-  <meta property="og:title" content="Rivian Essentials — Curated Gear for R1T, R1S &amp; R2">
+  <meta property="og:title" content="Best Rivian Accessories — R1T, R1S &amp; R2 Gear | Rivian Essentials">
   <meta property="og:description" content="Recovery gear, camp kit, cargo storage, charging, and interior protection for every Rivian. Curated picks that earn their place in the truck.">
   <meta property="og:image" content="https://rivian-essentials.com/images/brand/og-image.jpg">
   <meta property="og:site_name" content="Rivian Essentials">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rivian Essentials — Curated Gear for R1T, R1S &amp; R2">
+  <meta name="twitter:title" content="Best Rivian Accessories — R1T, R1S &amp; R2 Gear | Rivian Essentials">
   <meta name="twitter:description" content="Recovery gear, camp kit, cargo storage, charging, and interior protection for every Rivian.">
   <meta name="twitter:image" content="https://rivian-essentials.com/images/brand/og-image.jpg">
 
@@ -26,10 +26,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts: Barlow Condensed (trail signage), Karla (body), Chivo Mono (labels) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Karla:wght@400;500;700&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Fonts self-hosted in /fonts (declared in css/style.css) -->
+  <link rel="preload" href="/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/karla-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -50,6 +49,37 @@
         "name": "Rivian Essentials",
         "url": "https://rivian-essentials.com/",
         "logo": "https://rivian-essentials.com/images/brand/og-image.jpg"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://rivian-essentials.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What accessories should I buy first for a Rivian?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Start with the safety pair: magnetic jack pucks (tire shops don't stock Rivian-compatible ones) and a tire repair kit, since Rivians ship with no spare by default. After that, all-weather floor mats and screen protection are the highest-use daily upgrades." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do Rivians come with a spare tire?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No — Rivians ship without a spare by default. A full-size spare is a factory option on the R1T and R1S, and Rivian sells a compact spare for the R2. That's why a plug kit, a sidewall patch kit, and a way to air back up are the first things we recommend." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a Rivian use Tesla Superchargers?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The R1T and R1S have a CCS port and need a DC-rated NACS adapter — the A2Z Typhoon Pro is the owner-community favorite. The R2 has a native NACS port and plugs into Superchargers directly, no adapter needed." }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the best gifts for a Rivian owner?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Safe bets that fit every Rivian: a tire repair kit, AutoSock snow socks (check their tire size), a powered cooler, Rocky Talkie radios, or a portable camp shower. For R1 owners specifically, jack pucks and a console organizer tray are inexpensive and universally appreciated." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do R1 accessories fit the R2?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Fitted accessories — floor mats, sunshades, organizers, mud flaps — do not carry over; the R2 is a smaller vehicle and needs R2-specific versions. Universal gear like recovery equipment, coolers, and camp kit works across all Rivians. Note that Gen 1 (2022–24) and Gen 2 (2025+) R1s also differ for fitted parts." }
+          }
+        ]
       },
       {
         "@type": "ItemList",
@@ -155,32 +185,40 @@
         <svg class="glyph glyph--brand" aria-hidden="true"><use href="#pine"/></svg>
         <span>Rivian&nbsp;Essentials</span>
       </a>
-      <div class="category-nav__pills" role="list">
-        <a href="#recovery" class="nav-pill" role="listitem">Recovery</a>
-        <a href="#camp" class="nav-pill" role="listitem">Camp</a>
-        <a href="#cargo" class="nav-pill" role="listitem">Cargo</a>
-        <a href="#charging" class="nav-pill" role="listitem">Charging</a>
-        <a href="#interior" class="nav-pill" role="listitem">Interior</a>
-        <a href="#winter" class="nav-pill" role="listitem">Winter</a>
+      <div class="category-nav__pills">
+        <a href="#recovery" class="nav-pill">Recovery</a>
+        <a href="#camp" class="nav-pill">Camp</a>
+        <a href="#cargo" class="nav-pill">Cargo</a>
+        <a href="#charging" class="nav-pill">Charging</a>
+        <a href="#interior" class="nav-pill">Interior</a>
+        <a href="#winter" class="nav-pill">Winter</a>
       </div>
       <div class="category-nav__filter" role="group" aria-label="Filter gear by vehicle">
-        <button class="filter-chip is-active" data-filter="all" type="button">All</button>
-        <button class="filter-chip" data-filter="r1t" type="button">R1T</button>
-        <button class="filter-chip" data-filter="r1s" type="button">R1S</button>
-        <button class="filter-chip" data-filter="r2" type="button">R2</button>
+        <span class="category-nav__filter-label" aria-hidden="true">Show:</span>
+        <button class="filter-chip is-active" data-filter="all" type="button" aria-pressed="true">All</button>
+        <button class="filter-chip" data-filter="r1t" type="button" aria-pressed="false">R1T</button>
+        <button class="filter-chip" data-filter="r1s" type="button" aria-pressed="false">R1S</button>
+        <button class="filter-chip" data-filter="r2" type="button" aria-pressed="false">R2</button>
       </div>
     </div>
   </nav>
 
   <main>
 
+    <!-- ============ INTRO ============ -->
+    <section class="intro" aria-label="About Rivian Essentials">
+      <div class="intro__inner">
+        <p>Rivian Essentials is a curated guide to the best Rivian accessories — recovery gear, camp kit, cargo storage, charging equipment, and interior protection for the R1T pickup, the R1S SUV, and the new R2. Every pick is researched against what owners actually run, sized to Rivian fitment, and worth its space in the truck — which also makes this a reliable list of gifts for any Rivian owner. No filler; every product earns its spot.</p>
+        <p class="intro__disclosure">Reader-supported — we may earn a commission from links on this page. <a href="#disclosure">Full disclosure</a>.</p>
+      </div>
+    </section>
+
     <!-- ============ RECOVERY & OFF-ROAD ============ -->
     <section class="section" id="recovery" aria-labelledby="recovery-title">
       <div class="section__inner">
         <div class="section__header">
-          <p class="section__eyebrow"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Recovery &amp; Off-Road</p>
-          <h2 id="recovery-title">When the trail bites back</h2>
-          <p class="section__lede">Three tons of adventure vehicle is wonderful until it's stuck. This is the kit that gets a Rivian out of sand, snow, and mud — rated for its weight.</p>
+          <h2 id="recovery-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Recovery &amp; Off-Road Gear</span> When the trail bites back</h2>
+          <p class="section__lede">Three tons of adventure vehicle is wonderful until it's stuck. This is the kit that gets a Rivian unstuck, patched, aired back up, and home — rated for its weight.</p>
         </div>
         <div class="product-grid">
 
@@ -190,7 +228,7 @@
             data-gen: for gen-sensitive R1 products only — "g1" (2022-2024), "g2" (2025+),
               or "g1 g2" when both gens are covered by separate SKUs. Omit if gen doesn't
               matter. Pair it with visible badges on the fits line:
-                <span class="gen-badge">Gen 1</span> <span class="gen-badge">Gen 2 &middot; 2025+</span>
+                <span class="gen-badge">Gen 1 &middot; 2022&ndash;24</span> <span class="gen-badge">Gen 2 &middot; 2025+</span>
             Images live at images/products/SLUG/photo-800.{webp,jpg} (800px wide).
             Links are direct: https://www.amazon.com/dp/ASIN?tag=kchau06-20 with
               rel="nofollow sponsored noopener noreferrer".
@@ -206,7 +244,7 @@
             </div>
             <div class="product-card__info">
               <p class="product-card__kicker">Traction Boards</p>
-              <h3>MAXTRAX MKII Recovery Boards</h3>
+              <h3>MAXTRAX Recovery Boards</h3>
               <p class="product-card__review">Quad-motor torque won't help when you're high-centered. These are the boards recovery crews actually carry — aggressive teeth, near-indestructible nylon, and they double as shovels. The Xtreme adds replaceable alloy teeth for rock work; the MKII is the proven standard.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <div class="product-card__ctas">
@@ -258,7 +296,7 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Flat Repair</p>
               <h3>Tire Repair: Plugs + Sidewall</h3>
-              <p class="product-card__review">Rivians ship with no spare, and heavy EVs eat punctures. Mushroom plugs seal tread punctures from the inside; GlueTread's kit patches the sidewall gashes that plugs can't touch — carry both and most flats never become a tow.</p>
+              <p class="product-card__review">Rivians ship with no spare by default, and heavy EVs eat punctures. Mushroom plugs seal tread punctures from the inside; GlueTread's kit patches the sidewall gashes that plugs can't touch — carry both and most flats never become a tow.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <div class="product-card__ctas">
                 <a href="https://www.amazon.com/dp/B08BNPMS87?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">Plug Kit</a>
@@ -277,7 +315,7 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Air All Four At Once</p>
               <h3>4-Tire Inflation Kit</h3>
-              <p class="product-card__review">Every R1 already carries a compressor — this manifold is what makes it fast. Hook all four tires, air down or up simultaneously, and every tire lands on the same PSI with a digital gauge doing the counting. R2s pair it with the tankless compressor below.</p>
+              <p class="product-card__review">Every R1 already carries a compressor — this manifold is what makes it fast. Hook all four tires, air down or up simultaneously, and every tire lands on the same PSI with a digital gauge doing the counting. R2s pair it with a tankless 110V unit (see the R2 Air Supply pick in this section).</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <a href="https://www.amazon.com/dp/B0D7PTNM9B?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a>
             </div>
@@ -293,7 +331,7 @@
             <div class="product-card__info">
               <p class="product-card__kicker">R2 Air Supply</p>
               <h3>Tankless Air Compressor</h3>
-              <p class="product-card__review">The R2 skips the factory onboard compressor, but its outlets will happily run this quiet 110V tankless unit. Pair it with the 4-tire kit above and an R2 airs up just as fast as an R1.</p>
+              <p class="product-card__review">The R2 skips the factory onboard compressor, but its 120V trunk outlet will happily run this quiet tankless unit. Pair it with the 4-tire inflation kit in this section and an R2 airs up just as fast as an R1.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R2</p>
               <a href="https://www.amazon.com/dp/B07YTKQLVK?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a>
             </div>
@@ -329,14 +367,14 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Trail Safety</p>
               <h3>Element Fire Safety Stick</h3>
-              <p class="product-card__review">A campfire, a camp stove, and a 135 kWh battery all travel with you. This flare-sized stick discharges for 100 seconds — no pressure to lose, no gauge to check, no space argument against carrying it.</p>
+              <p class="product-card__review">A campfire, a camp stove, and a very large lithium battery all travel with you. This flare-sized stick discharges for 100 seconds — no pressure to lose, no gauge to check, no space argument against carrying it.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <a href="https://www.amazon.com/dp/B0GFTDT8DZ?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a>
             </div>
           </article>
 
         </div>
-        <p class="section__empty" hidden>Nothing tagged for this vehicle here yet — switch back to <button class="section__empty-reset" type="button">All</button>.</p>
+        <p class="section__empty" aria-live="polite" hidden>No <span class="section__empty-vehicle">R2</span> picks in this category yet — the aftermarket is young. <button class="section__empty-reset" type="button">See gear for all Rivians</button>.</p>
       </div>
     </section>
 
@@ -356,8 +394,7 @@
     <section class="section" id="camp" aria-labelledby="camp-title">
       <div class="section__inner">
         <div class="section__header">
-          <p class="section__eyebrow"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Camp &amp; Overland</p>
-          <h2 id="camp-title">Basecamp on wheels</h2>
+          <h2 id="camp-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Camping &amp; Overland Gear</span> Basecamp on wheels</h2>
           <p class="section__lede">A Rivian is a rolling power station with a fridge-ready outlet in the back. The right camp kit turns a trailhead parking spot into the best site in the forest.</p>
         </div>
         <div class="product-grid">
@@ -372,7 +409,7 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Powered Cooler</p>
               <h3>Dometic CFX Electric Cooler</h3>
-              <p class="product-card__review">Plugs straight into the bed or cargo outlets and sips power — real refrigeration for days without a bag of ice in sight. The CFX2 37 covers a weekend for two; the CFX5 45 steps up to app control and a tougher shell; the CFX5 75 dual-zone runs fridge and freezer at once for family basecamps.</p>
+              <p class="product-card__review">Plugs straight into the bed or cargo outlets and sips power — real refrigeration for days without a bag of ice in sight. The CFX2 37 covers a weekend for two; the CFX5 45 steps up to a color display, richer app features, and a tougher, better-insulated build; the CFX5 75 dual-zone runs fridge and freezer at once for family basecamps.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <div class="product-card__ctas">
                 <a href="https://www.amazon.com/dp/B0DF817KFR?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">CFX2 37 — Value</a>
@@ -434,7 +471,7 @@
           </article>
 
         </div>
-        <p class="section__empty" hidden>Nothing tagged for this vehicle here yet — switch back to <button class="section__empty-reset" type="button">All</button>.</p>
+        <p class="section__empty" aria-live="polite" hidden>No <span class="section__empty-vehicle">R2</span> picks in this category yet — the aftermarket is young. <button class="section__empty-reset" type="button">See gear for all Rivians</button>.</p>
       </div>
     </section>
 
@@ -454,8 +491,7 @@
     <section class="section" id="cargo" aria-labelledby="cargo-title">
       <div class="section__inner">
         <div class="section__header">
-          <p class="section__eyebrow"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Cargo &amp; Storage</p>
-          <h2 id="cargo-title">A place for everything</h2>
+          <h2 id="cargo-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Cargo &amp; Storage Accessories</span> A place for everything</h2>
           <p class="section__lede">Gear tunnel, frunk, under-seat bins, a bed or a trunk — Rivians hide storage everywhere. Organizers keep the recovery kit findable when you actually need it.</p>
         </div>
         <div class="product-grid">
@@ -493,7 +529,7 @@
           </article>
 
         </div>
-        <p class="section__empty" hidden>Nothing tagged for this vehicle here yet — switch back to <button class="section__empty-reset" type="button">All</button>.</p>
+        <p class="section__empty" aria-live="polite" hidden>No <span class="section__empty-vehicle">R2</span> picks in this category yet — the aftermarket is young. <button class="section__empty-reset" type="button">See gear for all Rivians</button>.</p>
       </div>
     </section>
 
@@ -513,8 +549,7 @@
     <section class="section" id="charging" aria-labelledby="charging-title">
       <div class="section__inner">
         <div class="section__header">
-          <p class="section__eyebrow"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Charging &amp; Road Trips</p>
-          <h2 id="charging-title">Range is freedom</h2>
+          <h2 id="charging-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Charging: Home &amp; Road Trip</span> Range is freedom</h2>
           <p class="section__lede">Home charging done right, adapters for every plug you'll meet, and the road-trip kit that makes a remote campground outlet usable.</p>
         </div>
         <div class="product-grid">
@@ -587,7 +622,7 @@
           </article>
 
         </div>
-        <p class="section__empty" hidden>Nothing tagged for this vehicle here yet — switch back to <button class="section__empty-reset" type="button">All</button>.</p>
+        <p class="section__empty" aria-live="polite" hidden>No <span class="section__empty-vehicle">R2</span> picks in this category yet — the aftermarket is young. <button class="section__empty-reset" type="button">See gear for all Rivians</button>.</p>
       </div>
     </section>
 
@@ -607,8 +642,7 @@
     <section class="section" id="interior" aria-labelledby="interior-title">
       <div class="section__inner">
         <div class="section__header">
-          <p class="section__eyebrow"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Interior &amp; Protection</p>
-          <h2 id="interior-title">Built for mud, dogs, and dust</h2>
+          <h2 id="interior-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Interior Accessories &amp; Protection</span> Built for mud, dogs, and dust</h2>
           <p class="section__lede">An adventure vehicle's interior should survive the adventure. Protection that handles wet gear, sandy paws, and trail dust — and still looks right in the driveway.</p>
         </div>
         <div class="product-grid">
@@ -624,7 +658,7 @@
               <p class="product-card__kicker">Floor Mats</p>
               <h3>Lasfit All-Weather Floor Mats</h3>
               <p class="product-card__review">Laser-scanned TPE with tall walls that actually contain a boot's worth of snowmelt — full set including trunk and backrest mats. Gen 1 and Gen 2 use different molds, so match the set to your model year.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1S <span class="gen-badge">Gen 1</span> <span class="gen-badge">Gen 2 &middot; 2025+</span></p>
+              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1S <span class="gen-badge">Gen 1 &middot; 2022&ndash;24</span> <span class="gen-badge">Gen 2 &middot; 2025+</span></p>
               <div class="product-card__ctas">
                 <a href="https://www.amazon.com/dp/B0G2PNDGD8?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">Gen 1 Set</a>
                 <a href="https://www.amazon.com/dp/B0F9YHM7PP?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">Gen 2 Set</a>
@@ -694,7 +728,7 @@
               <p class="product-card__kicker">Console Organization</p>
               <h3>Center Console Organizer Tray</h3>
               <p class="product-card__review">The console is a deep, wide cavern where small things go to disappear. This OEM-look tray adds a second level that slides effortlessly — owners call the color match perfect. Pick your generation's tray.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T &amp; R1S <span class="gen-badge">Gen 1</span> <span class="gen-badge">Gen 2 &middot; 2025+</span></p>
+              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T &amp; R1S <span class="gen-badge">Gen 1 &middot; 2022&ndash;24</span> <span class="gen-badge">Gen 2 &middot; 2025+</span></p>
               <div class="product-card__ctas">
                 <a href="https://www.amazon.com/dp/B0BXDFNGGR?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">Gen 1 Tray</a>
                 <a href="https://www.amazon.com/dp/B0DRK33CBP?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">Gen 2 Tray</a>
@@ -744,17 +778,18 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Budget Gear Guard Storage</p>
               <h3>High Endurance MicroSD + Reader</h3>
-              <p class="product-card__review">The budget route to the same result: a High Endurance card is rated for the constant rewriting that camera recording demands, and the MobileMate reader turns it into a USB drive. Pop the card out to review footage anywhere.</p>
+              <p class="product-card__review">The budget route to the same result: a High Endurance card is rated for the constant rewriting that camera recording demands, and the MobileMate reader turns it into a USB drive. The reader is USB-A, so grab the right-angle USB-C adapter to seat it cleanly in the console port.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <div class="product-card__ctas">
                 <a href="https://www.amazon.com/dp/B07P4HBRMV?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">256GB Card</a>
                 <a href="https://www.amazon.com/dp/B07G5JV2B5?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">USB Reader</a>
+                <a href="https://www.amazon.com/dp/B0DN1HRNFZ?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">Right-Angle Adapter</a>
               </div>
             </div>
           </article>
 
         </div>
-        <p class="section__empty" hidden>Nothing tagged for this vehicle here yet — switch back to <button class="section__empty-reset" type="button">All</button>.</p>
+        <p class="section__empty" aria-live="polite" hidden>No <span class="section__empty-vehicle">R2</span> picks in this category yet — the aftermarket is young. <button class="section__empty-reset" type="button">See gear for all Rivians</button>.</p>
       </div>
     </section>
 
@@ -774,8 +809,7 @@
     <section class="section" id="winter" aria-labelledby="winter-title">
       <div class="section__inner">
         <div class="section__header">
-          <p class="section__eyebrow"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Winter &amp; Weather</p>
-          <h2 id="winter-title">The season that tests everything</h2>
+          <h2 id="winter-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Winter Accessories</span> The season that tests everything</h2>
           <p class="section__lede">Cold cuts range and coats windshields. The winter kit lives in the truck from first snow to mud season, and you'll be glad every time.</p>
         </div>
         <div class="product-grid">
@@ -790,12 +824,12 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Chain Control</p>
               <h3>AutoSock Snow Socks</h3>
-              <p class="product-card__review">Chain-control checkpoints don't care about quad-motor AWD — and steel chains don't clear every Rivian wheel setup. These chain-law-approved textile socks do, and they pack down to a glovebox-sized pouch. Sized by tire: pick the sock that matches your wheels.</p>
+              <p class="product-card__review">Chain-control checkpoints don't care about quad-motor AWD — and steel chains don't clear every Rivian wheel setup. These chain-law-approved textile socks do, and they pack down to a glovebox-sized pouch. Sized by tire, not wheel — check your sidewall against AutoSock's chart before ordering. 21&Prime; R2 Sport owners: AutoSock doesn't list your size yet.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <div class="product-card__ctas">
                 <a href="https://www.amazon.com/dp/B0096NBHOA?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">R1 · 20&Prime; AT — AL69</a>
                 <a href="https://www.amazon.com/dp/B083MWTZ7K?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">R1 · 21&Prime;/22&Prime; — HP870</a>
-                <a href="https://www.amazon.com/dp/B0096NBH72?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">R2 · All — AL64</a>
+                <a href="https://www.amazon.com/dp/B0096NBH72?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">R2 · 19&Prime;/20&Prime; — AL64</a>
               </div>
             </div>
           </article>
@@ -842,7 +876,7 @@
             <div class="product-card__info">
               <p class="product-card__kicker">Cargo Protection</p>
               <h3>Lasfit Rear Cargo Liner</h3>
-              <p class="product-card__review">Skis, wet boots, and a snow-crusted dog all land in the same place. A raised-lip liner catches the melt so it doesn't find the carpet — pull it out and hose it down in spring.</p>
+              <p class="product-card__review">Skis, wet boots, and a snow-crusted dog all land in the same place. A raised-lip liner catches the melt so it doesn't find the carpet — pull it out and hose it down in spring. The flat liner is the star; treat the velcro backrest pieces as take-or-leave.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1S</p>
               <a href="https://www.amazon.com/dp/B0FMR2G43B?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a>
             </div>
@@ -865,7 +899,50 @@
           </article>
 
         </div>
-        <p class="section__empty" hidden>Nothing tagged for this vehicle here yet — switch back to <button class="section__empty-reset" type="button">All</button>.</p>
+        <p class="section__empty" aria-live="polite" hidden>No <span class="section__empty-vehicle">R2</span> picks in this category yet — the aftermarket is young. <button class="section__empty-reset" type="button">See gear for all Rivians</button>.</p>
+      </div>
+    </section>
+
+    <div class="treeline treeline--divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="xMidYMax meet">
+        <use href="#pine" x="620"  y="10" width="18" height="30"/>
+        <use href="#pine" x="654"  y="18" width="13" height="22"/>
+        <use href="#pine" x="682"  y="4"  width="22" height="36"/>
+        <use href="#pine" x="720"  y="14" width="15" height="26"/>
+        <use href="#pine" x="750"  y="8"  width="19" height="32"/>
+        <use href="#pine" x="790"  y="18" width="13" height="22"/>
+        <rect class="treeline__ground" x="560" y="38" width="320" height="2" rx="1"/>
+      </svg>
+    </div>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+      <div class="section__inner">
+        <div class="section__header">
+          <h2 id="faq-title"><span class="h2-kicker"><svg class="glyph" aria-hidden="true"><use href="#pine"/></svg> Rivian Accessories FAQ</span> Trail notes</h2>
+        </div>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>What accessories should I buy first for a Rivian?</summary>
+            <p>Start with the safety pair: magnetic jack pucks (tire shops don't stock Rivian-compatible ones) and a tire repair kit, since Rivians ship with no spare by default. After that, all-weather floor mats and screen protection are the highest-use daily upgrades.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Do Rivians come with a spare tire?</summary>
+            <p>No — Rivians ship without a spare by default. A full-size spare is a factory option on the R1T and R1S, and Rivian sells a compact spare for the R2. That's why a plug kit, a sidewall patch kit, and a way to air back up are the first things we recommend.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can a Rivian use Tesla Superchargers?</summary>
+            <p>Yes. The R1T and R1S have a CCS port and need a DC-rated NACS adapter — the A2Z Typhoon Pro is the owner-community favorite. The R2 has a native NACS port and plugs into Superchargers directly, no adapter needed.</p>
+          </details>
+          <details class="faq__item">
+            <summary>What are the best gifts for a Rivian owner?</summary>
+            <p>Safe bets that fit every Rivian: a tire repair kit, AutoSock snow socks (check their tire size), a powered cooler, Rocky Talkie radios, or a portable camp shower. For R1 owners specifically, jack pucks and a console organizer tray are inexpensive and universally appreciated.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Do R1 accessories fit the R2?</summary>
+            <p>Fitted accessories — floor mats, sunshades, organizers, mud flaps — do not carry over; the R2 is a smaller vehicle and needs R2-specific versions. Universal gear like recovery equipment, coolers, and camp kit works across all Rivians. Note that Gen 1 (2022–24) and Gen 2 (2025+) R1s also differ for fitted parts.</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -908,8 +985,8 @@
           <a href="https://cyberoffroading.com/" target="_blank" rel="noopener">CyberOffroading ↗</a>
         </nav>
       </div>
-      <div class="site-footer__disclaimer">
-        <p><strong>Affiliate disclosure:</strong> Rivian-Essentials.com is reader-supported. As an Amazon Associate, we earn from qualifying purchases. When you buy through links on our site, we may earn a commission at no extra cost to you. We only recommend products we use ourselves or have thoroughly researched.</p>
+      <div class="site-footer__disclaimer" id="disclosure">
+        <p><strong>Affiliate disclosure:</strong> Rivian-Essentials.com is reader-supported. As an Amazon Associate, we earn from qualifying purchases. When you buy through links on our site, we may earn a commission at no extra cost to you. We only recommend products we've thoroughly researched — and we say so when a category is still young.</p>
         <p><strong>Trademark notice:</strong> "Rivian", "R1T", "R1S", and "R2" are trademarks of Rivian Automotive, Inc. Rivian Essentials is an independent website and is not affiliated with, endorsed by, sponsored by, or in any way officially connected with Rivian Automotive, Inc.</p>
       </div>
       <p class="site-footer__copyright">&copy; <span id="year">2026</span> Rivian Essentials · rivian-essentials.com</p>

@@ -54,10 +54,13 @@
 
   /* ---------- Vehicle filter ---------- */
   var chips = document.querySelectorAll('.filter-chip');
+  var VEHICLE_NAMES = { r1t: 'R1T', r1s: 'R1S', r2: 'R2' };
 
   function applyFilter(filter) {
     chips.forEach(function (c) {
-      c.classList.toggle('is-active', c.dataset.filter === filter);
+      var active = c.dataset.filter === filter;
+      c.classList.toggle('is-active', active);
+      c.setAttribute('aria-pressed', String(active));
     });
     document.querySelectorAll('.section').forEach(function (section) {
       var visible = 0;
@@ -68,7 +71,11 @@
         if (show) visible++;
       });
       var empty = section.querySelector('.section__empty');
-      if (empty) empty.hidden = visible > 0;
+      if (empty) {
+        var vehicle = empty.querySelector('.section__empty-vehicle');
+        if (vehicle && VEHICLE_NAMES[filter]) vehicle.textContent = VEHICLE_NAMES[filter];
+        empty.hidden = visible > 0;
+      }
     });
   }
 

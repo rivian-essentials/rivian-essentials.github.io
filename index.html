@@ -185,18 +185,17 @@
         <div class="product-grid">
 
           <!--
-            PRODUCT CARD TEMPLATE — copy this block to add a product.
+            PRODUCT CARD TEMPLATE — copy any card in this grid to add a product.
             data-fits: space-separated list of "r1t", "r1s", "r2" (used by the vehicle filter).
             data-gen: for gen-sensitive R1 products only — "g1" (2022-2024), "g2" (2025+),
               or "g1 g2" when both gens are covered by separate SKUs. Omit if gen doesn't
               matter. Pair it with visible badges on the fits line:
                 <span class="gen-badge">Gen 1</span> <span class="gen-badge">Gen 2 &middot; 2025+</span>
-            Replace the .product-card__image placeholder with:
-              <picture>
-                <source srcset="images/products/SLUG/photo-800.webp" type="image/webp">
-                <img src="images/products/SLUG/photo-800.jpg" alt="DESCRIPTION" width="800" height="600" loading="lazy" decoding="async">
-              </picture>
-            Replace href="#" with your amzn.to link.
+            Images live at images/products/SLUG/photo-800.{webp,jpg} (800px wide).
+            Links are direct: https://www.amazon.com/dp/ASIN?tag=kchau06-20 with
+              rel="nofollow sponsored noopener noreferrer".
+            For gen-split or paired products, wrap multiple .cta-button in
+              <div class="product-card__ctas">.
           -->
           <article class="product-card" data-fits="r1t r1s r2">
             <div class="product-card__image">
@@ -230,25 +229,6 @@
               <p class="product-card__review">A 7/8" kinetic rope stretches ~30% to yank a stuck truck free without shock-loading the frame. Rated far beyond a 7,000 lb EV — most kits sold for gas trucks aren't. Soft shackles included.</p>
               <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
               <a href="https://www.amazon.com/dp/B0BV15XNN7?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a>
-            </div>
-          </article>
-
-          <article class="product-card" data-fits="r1t r1s r2">
-            <div class="product-card__image">
-              <picture>
-                <source srcset="images/products/tire-inflator/photo-800.webp" type="image/webp">
-                <img src="images/products/tire-inflator/photo-800.jpg" alt="DeWalt 20V cordless tire inflator" width="800" height="800" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__kicker">Air Down / Air Up</p>
-              <h3>Tire Deflator + Portable Inflator</h3>
-              <p class="product-card__review">Airing down to ~20 PSI transforms how a Rivian rides on washboard and sand. The ARB E-Z deflator drops all four fast; DeWalt's 20V inflator actually handles 35" tires — cheap handhelds overheat and quit.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> All Rivians</p>
-              <div class="product-card__ctas">
-                <a href="https://www.amazon.com/dp/B004LQCDOA?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">ARB Deflator</a>
-                <a href="https://www.amazon.com/dp/B07H39S9JQ?tag=kchau06-20" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">DeWalt Inflator</a>
-              </div>
             </div>
           </article>
 
@@ -398,34 +378,6 @@
             </div>
           </article>
 
-          <article class="product-card" data-fits="r1t">
-            <div class="product-card__image product-card__image--placeholder">
-              <svg class="glyph glyph--placeholder" aria-hidden="true"><use href="#pine"/></svg>
-              <span class="product-card__image-note">Photo coming soon</span>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__kicker">Gear Tunnel Kitchen</p>
-              <h3>Slide-Out Camp Kitchen</h3>
-              <p class="product-card__review">The gear tunnel is the R1T's best trick, and a slide-out kitchen is its best use — stove, prep surface, and utensil storage that deploys in seconds and disappears completely.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T (gear tunnel)</p>
-              <a href="#" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a><!-- TODO: replace # with amzn.to link -->
-            </div>
-          </article>
-
-          <article class="product-card" data-fits="r1t r1s">
-            <div class="product-card__image product-card__image--placeholder">
-              <svg class="glyph glyph--placeholder" aria-hidden="true"><use href="#pine"/></svg>
-              <span class="product-card__image-note">Photo coming soon</span>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__kicker">Rooftop Tent</p>
-              <h3>Rooftop Tent for Factory Crossbars</h3>
-              <p class="product-card__review">Mounts to Rivian's factory crossbars without adapters and sets up in about a minute. Sleeping above the ground means no scouting for flat, rock-free dirt at 9 PM.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T &amp; R1S</p>
-              <a href="#" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a><!-- TODO: replace # with amzn.to link -->
-            </div>
-          </article>
-
           <article class="product-card" data-fits="r1t r1s r2">
             <div class="product-card__image">
               <picture>
@@ -503,20 +455,6 @@
           <p class="section__lede">Gear tunnel, frunk, under-seat bins, a bed or a trunk — Rivians hide storage everywhere. Organizers keep the recovery kit findable when you actually need it.</p>
         </div>
         <div class="product-grid">
-
-          <article class="product-card" data-fits="r1t">
-            <div class="product-card__image product-card__image--placeholder">
-              <svg class="glyph glyph--placeholder" aria-hidden="true"><use href="#pine"/></svg>
-              <span class="product-card__image-note">Photo coming soon</span>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__kicker">Gear Tunnel Storage</p>
-              <h3>Gear Tunnel Organizer Bags</h3>
-              <p class="product-card__review">Fitted duffels that slide into the tunnel like magazine rounds — no more loose gear rolling to the far end. Handles on both ends because you will load it from both sides.</p>
-              <p class="product-card__fits"><span class="product-card__fits-label">Fits</span> R1T (gear tunnel)</p>
-              <a href="#" class="cta-button" target="_blank" rel="nofollow sponsored noopener noreferrer">View on Amazon</a><!-- TODO: replace # with amzn.to link -->
-            </div>
-          </article>
 
           <article class="product-card" data-fits="r1t r1s">
             <div class="product-card__image">

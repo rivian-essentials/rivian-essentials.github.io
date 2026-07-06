@@ -123,12 +123,6 @@ button {
   height: 19px;
 }
 
-.glyph--placeholder {
-  width: 40px;
-  height: 53px;
-  fill: var(--edge-strong);
-}
-
 /* ---------- Treelines (signature) ---------- */
 
 .treeline {
@@ -588,23 +582,6 @@ button {
 
 .product-card:hover .product-card__image img {
   transform: scale(1.04);
-}
-
-/* Designed placeholder for cards awaiting photos */
-.product-card__image--placeholder {
-  flex-direction: column;
-  gap: 12px;
-  background:
-    radial-gradient(ellipse at 50% 120%, rgba(240, 180, 41, 0.05), transparent 60%),
-    var(--pine-2);
-}
-
-.product-card__image-note {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--lichen);
 }
 
 .product-card__info {

@@ -7,11 +7,11 @@ Pure HTML/CSS/JS, no build step — same architecture as tesla-essentials.com an
 
 ## Adding a product
 
-1. Find the `PRODUCT CARD TEMPLATE` comment in `index.html` (top of the Recovery section) and copy a card into the right section's `.product-grid`.
+1. Copy an existing card in `index.html` into the right section's `.product-grid` (see the `PRODUCT CARD TEMPLATE` comment at the top of the Recovery grid).
 2. Set `data-fits` to a space-separated list of `r1t`, `r1s`, `r2` — the nav's vehicle filter uses it.
 3. **R1 generations:** if fitment differs between Gen 1 (2022–2024) and Gen 2 (2025+) — common for mats, PPF, wireless pads, cabin filters — add `data-gen` (`g1`, `g2`, or `g1 g2`) and show `<span class="gen-badge">Gen 1</span>` / `<span class="gen-badge">Gen 2 · 2025+</span>` badges on the Fits line. Omit both when gen doesn't matter. (`data-gen` is inert today; it future-proofs for a Gen sub-filter once the catalog grows.)
-4. Replace the CTA's `href="#"` with your `amzn.to` shortlink. Keep `rel="nofollow sponsored noopener noreferrer"`.
-5. Add photos (see below) and swap the placeholder `<div>` for a `<picture>` element:
+4. Link CTAs directly: `https://www.amazon.com/dp/ASIN?tag=kchau06-20` with `rel="nofollow sponsored noopener noreferrer"`. For gen-split or paired products, wrap multiple buttons in `<div class="product-card__ctas">`.
+5. Add photos (see below) in a `<picture>` element:
 
 ```html
 <picture>

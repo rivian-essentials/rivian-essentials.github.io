@@ -225,6 +225,65 @@ button {
 }
 
 /* ==========================================================================
+   REFERRAL STRIP — compass-yellow bar at the very top
+   ========================================================================== */
+
+.referral-bar {
+  display: block;
+  background: var(--compass);
+  color: var(--forest);
+  transition: background 180ms var(--ease);
+}
+
+.referral-bar:hover,
+.referral-bar:focus-visible {
+  background: var(--compass-hot);
+}
+
+.referral-bar__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 11px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.referral-bar__q {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.referral-bar__offer {
+  font-weight: 700;
+}
+
+.referral-bar__arrow {
+  display: inline-block; /* inline elements ignore transform */
+  transition: transform 200ms var(--ease-out);
+}
+
+.referral-bar:hover .referral-bar__arrow,
+.referral-bar:focus-visible .referral-bar__arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 639px) {
+  .referral-bar__inner {
+    padding: 10px 20px;
+    font-size: 0.78rem;
+  }
+}
+
+/* ==========================================================================
    HERO
    ========================================================================== */
 
